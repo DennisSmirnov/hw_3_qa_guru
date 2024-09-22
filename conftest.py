@@ -2,6 +2,7 @@ import pytest
 from selene import browser
 from selenium.webdriver import Firefox
 
+
 @pytest.fixture(scope='session')
 def browser_controller():
     browser.config.driver = Firefox()
@@ -10,6 +11,7 @@ def browser_controller():
     browser.open('https://google.com/ncr')
     yield
     browser.quit()
+
 
 @pytest.fixture(autouse=True)
 def reset_browser():
